@@ -69,11 +69,9 @@ st.markdown("""
     }
     
     /* Bulletproof text visibility for Streamlit markdown elements */
-    div[data-testid="stMarkdownContainer"] p, 
-    div[data-testid="stMarkdownContainer"] li, 
-    div[data-testid="stMarkdownContainer"] h1, 
-    div[data-testid="stMarkdownContainer"] h2, 
-    div[data-testid="stMarkdownContainer"] h3 {
+    .stMarkdown p, .stMarkdown li, .stMarkdown h1, .stMarkdown h2, 
+    .stMarkdown h3, .stMarkdown h4, .stMarkdown h5, .stMarkdown h6, 
+    .stMarkdown span, div[data-testid="stMarkdownContainer"] * {
         color: #E2E8F0 !important;
     }
     

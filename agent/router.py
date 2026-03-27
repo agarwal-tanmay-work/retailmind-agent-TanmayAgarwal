@@ -94,7 +94,9 @@ def classify_intent(query: str, conversation_context: str = "") -> dict:
         model="llama-3.3-70b-versatile",
         temperature=0.1,  # Very low temperature for consistent classification
         max_tokens=150,   # Classification output is small
-        model_kwargs={"top_p": 0.95}
+        model_kwargs={"top_p": 0.95},
+        max_retries=0,
+        timeout=15
     )
     
     user_message = f"Conversation context:\n{conversation_context}\n\nClassify this query: {query}"
@@ -200,7 +202,9 @@ def generate_response(query: str, tool_results: str, conversation_history: list,
         model="llama-3.3-70b-versatile",
         temperature=0.5,  # Moderate temperature for natural but accurate responses
         max_tokens=800,   # Allow detailed responses
-        model_kwargs={"top_p": 0.9}
+        model_kwargs={"top_p": 0.9},
+        max_retries=0,
+        timeout=25
     )
     
     messages = [SystemMessage(content=RESPONSE_SYSTEM_PROMPT)]

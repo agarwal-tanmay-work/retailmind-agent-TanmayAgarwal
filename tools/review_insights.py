@@ -84,7 +84,9 @@ def get_review_insights(product_id: str) -> dict:
             model="llama-3.3-70b-versatile",
             temperature=0.3,  # Low temperature for consistent, factual analysis
             max_tokens=300,   # Sufficient for structured JSON response
-            model_kwargs={"top_p": 0.9} # Slightly restricted for focused output
+            model_kwargs={"top_p": 0.9}, # Slightly restricted for focused output
+            max_retries=0,
+            timeout=15
         )
         
         system_content = (
