@@ -1,78 +1,77 @@
 <div align="center">
 
-<!-- Animated Header Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=250&section=header&text=🛍️%20RetailMind%20AI&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Product%20Intelligence%20Agent%20for%20StyleCraft&descAlignY=55&descSize=18" width="100%"/>
-
-<!-- Animated Badge Row -->
-[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.55-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
-[![LangChain](https://img.shields.io/badge/🦜_LangChain-Powered-1C3C3C?style=for-the-badge)](https://langchain.com)
-[![Groq](https://img.shields.io/badge/⚡_Groq-Llama_3.3_70B-F55036?style=for-the-badge)](https://groq.com)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+<!-- Animated Waving Header -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,50:764ba2,100:f093fb&height=220&section=header&text=🛍️%20RetailMind%20AI&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=30&desc=Product%20Intelligence%20Agent%20•%20StyleCraft&descAlignY=52&descSize=16&descColor=e0e0ff" width="100%"/>
 
 <br/>
 
-> **An AI-powered product intelligence agent** that transforms how product managers interact with their catalog data. Ask questions in natural language, get instant insights backed by data, and receive proactive alerts — all through a beautiful conversational interface.
+<!-- Badges -->
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.55-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![LangChain](https://img.shields.io/badge/LangChain-Orchestration-1C3C3C?style=flat-square&logo=chainlink&logoColor=white)](https://langchain.com)
+[![Groq](https://img.shields.io/badge/Groq-Llama_3.3_70B-F55036?style=flat-square&logo=meta&logoColor=white)](https://groq.com)
+[![Tools](https://img.shields.io/badge/AI_Tools-6-blueviolet?style=flat-square)]()
+[![SKUs](https://img.shields.io/badge/Products-30_SKUs-orange?style=flat-square)]()
 
 <br/>
 
-<!-- Animated Typing Effect -->
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3000&pause=1000&color=667EEA&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=Ask+%22Which+products+need+restocking%3F%22;Get+instant+margin+analysis+%26+pricing+flags;AI-powered+sentiment+from+customer+reviews;Proactive+daily+briefing+on+startup" alt="Typing SVG" />
+<!-- Typing Animation -->
+<a href="#"><img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=18&duration=3000&pause=800&color=A78BFA&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=70&lines=Ask+anything+about+your+product+catalog;Get+real-time+inventory+%26+pricing+intelligence;AI-powered+review+sentiment+analysis" alt="Typing SVG" /></a>
+
+<br/>
 
 </div>
 
 ---
 
-## ✨ Capabilities at a Glance
+## 📌 About
+
+**RetailMind AI** is an intelligent product analytics agent built for **StyleCraft**, a D2C fashion brand with 30 active SKUs across 5 categories. It replaces 4–5 hours of manual weekly analysis with instant, conversational intelligence powered by **LangChain** and **Groq LLMs**.
+
+> 💡 Built for the **Building AI Agents Mid-Term Examination (Set-B)** — UGDSAI Semester II
+
+---
+
+## ✨ Features
 
 <table>
 <tr>
-<td align="center" width="16%">
+<td width="50%">
 
-### 📦
-**Inventory Health**
-<br/>
-<sub>Tracks stock levels, predicts stockout risk, generates urgency-sorted restock alerts with revenue-at-risk calculations</sub>
-
-</td>
-<td align="center" width="16%">
-
-### 💲
-**Pricing Analysis**
-<br/>
-<sub>Computes gross margins, classifies price positioning (Premium/Mid/Budget), flags dangerously low margins</sub>
+### 🤖 AI Agent Core
+- **LLM-Powered Router** — Intent classification via LangChain (not keyword matching)
+- **6 Specialized Tools** — Inventory, Pricing, Reviews, Search, Category, Restock
+- **Multi-Turn Memory** — Drill down from category → product → follow-up
+- **Daily Briefing** — Auto-generated critical alerts on startup
 
 </td>
-<td align="center" width="16%">
+<td width="50%">
 
-### ⭐
-**Review Insights**
-<br/>
-<sub>LangChain + LLM-powered sentiment analysis with theme extraction from customer reviews</sub>
-
-</td>
-<td align="center" width="16%">
-
-### 📊
-**Catalog Search**
-<br/>
-<sub>Natural language product discovery with intelligent scoring and category filtering</sub>
+### 📊 Analytics Dashboard
+- **Interactive Charts** — Plotly visualizations for category metrics
+- **Catalog Summary Panel** — Always-visible KPI cards with live data
+- **Category Filtering** — Sidebar scope control across all views
+- **Quick Action Buttons** — One-click access to common queries
 
 </td>
-<td align="center" width="16%">
+</tr>
+<tr>
+<td width="50%">
 
-### 🏷️
-**Category Metrics**
-<br/>
-<sub>Aggregated performance by category: SKUs, ratings, margins, revenue leaders</sub>
+### 🎨 Premium UI
+- **Dark Glassmorphic Theme** — Frosted glass cards, gradient animations
+- **CSS Micro-Animations** — Fade-in, pulse, slide-in effects
+- **Responsive Layout** — Wide mode with intelligent spacing
+- **Google Fonts (Inter)** — Typography that feels premium
 
 </td>
-<td align="center" width="16%">
+<td width="50%">
 
-### 🔔
-**Daily Briefing**
-<br/>
-<sub>Auto-generated startup report with top stockout risks, worst ratings, and margin anomalies</sub>
+### 🛡️ Robustness
+- **Graceful Error Handling** — Missing API keys, bad inputs, edge cases
+- **Input Validation** — Handles empty queries, unknown product IDs
+- **LLM Fallback** — Provides basic analysis if API call fails
+- **Result Caching** — Avoids redundant LLM calls for reviews
 
 </td>
 </tr>
@@ -80,251 +79,168 @@
 
 ---
 
-## 🏗️ System Architecture
-
-The agent uses an **LLM-powered Router Pattern** — each user query flows through intent classification → tool dispatch → response synthesis, all orchestrated by **LangChain**.
+## 🏗️ Architecture
 
 ```mermaid
-graph TD
-    subgraph "💬 User Interface"
-        A[User Query via Streamlit Chat]
-        K[📋 Daily Briefing — Auto on Startup]
+flowchart TD
+    subgraph UI ["🖥️ Streamlit Interface"]
+        A["💬 Chat Input"] --> B
+        Q["📊 Analytics Tab"]
+        K["📋 Daily Briefing"]
     end
-    
-    subgraph "🧠 LangChain Agent Core"
-        B["🔀 Router Agent<br/>(LLM Intent Classification)<br/>langchain_groq.ChatGroq"]
-        
-        B -->|INVENTORY| C["📦 get_inventory_health()<br/>+ generate_restock_alert()"]
-        B -->|PRICING| D["💲 get_pricing_analysis()"]
-        B -->|REVIEWS| E["⭐ get_review_insights()<br/>(LLM Summarization)"]
-        B -->|CATALOG| F["📊 search_products()<br/>+ get_category_performance()"]
-        B -->|GENERAL| G["💬 Direct LLM Response"]
+
+    subgraph Agent ["🧠 LangChain Agent Core"]
+        B["🔀 Router Agent\n(ChatGroq · temp=0.1)"]
+        B -->|INVENTORY| C["📦 inventory_health\n+ restock_alert"]
+        B -->|PRICING| D["💲 pricing_analysis"]
+        B -->|REVIEWS| E["⭐ review_insights\n(LLM Sentiment)"]
+        B -->|CATALOG| F["📊 search_products\n+ category_performance"]
+        B -->|GENERAL| G["💬 Direct Response"]
     end
-    
-    subgraph "📝 Response Layer"
-        H["🤖 LangChain Response Synthesizer<br/>SystemMessage + HumanMessage + AIMessage"]
+
+    subgraph Synthesis ["📝 Response Generation"]
+        H["🤖 LangChain Synthesizer\n(ChatGroq · temp=0.5)\nSystemMessage + HumanMessage + AIMessage"]
     end
-    
-    A --> B
+
+    subgraph Data ["📁 Data Layer"]
+        CSV1["retailmind_products.csv\n30 SKUs"]
+        CSV2["retailmind_reviews.csv\n40 Reviews"]
+    end
+
     C & D & E & F & G --> H
-    H --> I["✨ Natural Language Response"]
-    I --> A
-    
-    K --> C
-    K --> E
-    K --> D
-    
+    H --> I["✨ Response to User"]
+    C & D & F -.-> CSV1
+    E -.-> CSV2
+    K --> C & D & E
+
     style B fill:#667eea,color:#fff,stroke:#764ba2,stroke-width:2px
     style H fill:#764ba2,color:#fff,stroke:#667eea,stroke-width:2px
+    style UI fill:#1a1a2e22,stroke:#667eea
+    style Agent fill:#24243e22,stroke:#764ba2
 ```
-
-### Key Design Decisions
-
-| Decision | Rationale |
-|:---|:---|
-| **LangChain for LLM orchestration** | Industry-standard framework; uses `ChatGroq`, `SystemMessage`, `HumanMessage`, `AIMessage` for structured message passing |
-| **LLM-based routing (not regex)** | Semantic understanding of intent; handles ambiguous queries gracefully |
-| **Tool result → LLM synthesis** | Raw data is always interpreted by the LLM before reaching the user, ensuring natural language output |
-| **Conversation memory** | Enables multi-turn drill-downs (category → product → follow-up) without losing context |
-| **Low temperature for classification (0.1)** | Ensures deterministic, consistent intent routing |
-| **Higher temperature for responses (0.5)** | Enables natural, varied conversational output |
 
 ---
 
 ## 📂 Project Structure
 
 ```
-retail-mind/
-│
-├── 🚀 run.py                     # Entry point → python run.py
-├── 🎨 app.py                     # Streamlit UI (dark theme + glassmorphism)
+📦 retail-mind/
+├── 🚀 run.py                        ← Entry point (python run.py)
+├── 🎨 app.py                        ← Streamlit UI with dark theme
 │
 ├── 🤖 agent/
-│   ├── __init__.py
-│   ├── router.py                  # LangChain ChatGroq Router (intent → tool → response)
-│   ├── memory.py                  # Multi-turn conversation memory manager
-│   └── briefing.py                # Auto Daily Briefing engine
+│   ├── router.py                     ← LangChain ChatGroq router
+│   ├── memory.py                     ← Conversation memory manager
+│   └── briefing.py                   ← Daily briefing engine
 │
 ├── 🔧 tools/
-│   ├── __init__.py
-│   ├── search_products.py         # Tool 1: Text-matching product search
-│   ├── inventory_health.py        # Tool 2: Stock health + days-to-stockout
-│   ├── pricing_analysis.py        # Tool 3: Margin calc + price positioning
-│   ├── review_insights.py         # Tool 4: LangChain LLM sentiment analysis
-│   ├── category_performance.py    # Tool 5: Category-level aggregations
-│   └── restock_alert.py           # Tool 6: Urgency-sorted stockout scanner
+│   ├── search_products.py            ← Tool 1: Product search
+│   ├── inventory_health.py           ← Tool 2: Stock health
+│   ├── pricing_analysis.py           ← Tool 3: Margin analysis
+│   ├── review_insights.py            ← Tool 4: LLM sentiment
+│   ├── category_performance.py       ← Tool 5: Category metrics
+│   └── restock_alert.py              ← Tool 6: Restock alerts
 │
 ├── 📊 data/
-│   ├── __init__.py
-│   └── loader.py                  # Cached CSV loading via @st.cache_data
+│   └── loader.py                     ← Cached CSV loading
 │
-├── 📄 retailmind_products.csv     # 30 SKUs across 5 categories
-├── 📄 retailmind_reviews.csv      # 40 customer reviews
-├── 📋 requirements.txt            # All Python dependencies
-├── 🔒 .env.example                # API key template (never commit real keys!)
-├── 🚫 .gitignore                  # Excludes .env, __pycache__, etc.
-└── 📖 README.md                   # You're reading it!
+├── 📄 retailmind_products.csv        ← 30 products
+├── 📄 retailmind_reviews.csv         ← 40 reviews
+├── 📋 requirements.txt
+├── 🔒 .env.example
+└── 📖 README.md
 ```
 
 ---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-
-- **Python 3.9+**
-- **Groq API Key** — Free at [console.groq.com](https://console.groq.com)
-
-### Installation
-
 ```bash
-# 1. Clone the repository
+# 1️⃣ Clone
 git clone https://github.com/agarwal-tanmay-work/creditsage-agent-TanmayAgarwal.git
 cd creditsage-agent-TanmayAgarwal
 
-# 2. Install dependencies (includes LangChain, Streamlit, Groq, etc.)
+# 2️⃣ Install
 pip install -r requirements.txt
 
-# 3. Configure environment
+# 3️⃣ Configure
 cp .env.example .env
-# Edit .env and set: GROQ_API_KEY=gsk_your_key_here
+# Edit .env → GROQ_API_KEY=gsk_your_key_here
 
-# 4. Launch! 🚀
+# 4️⃣ Launch
 python run.py
 ```
 
-The app will open at **`http://localhost:8501`** with the Daily Briefing auto-generated.
+> App opens at **http://localhost:8501** with Daily Briefing auto-generated ✨
+
+---
+
+## 🦜 LangChain Integration
+
+All LLM interactions use **LangChain** (`langchain_groq` + `langchain_core`):
+
+```python
+from langchain_groq import ChatGroq
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+
+# Router — deterministic classification
+llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.1)
+
+# Reviews — factual sentiment analysis
+llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.3)
+
+# Responses — natural conversation
+llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.5)
+```
+
+| Parameter | Router | Reviews | Response | Why |
+|:---|:---:|:---:|:---:|:---|
+| `temperature` | 0.1 | 0.3 | 0.5 | Low → deterministic; High → natural |
+| `max_tokens` | 150 | 300 | 800 | Sized to output type |
+| `top_p` | 0.95 | 0.9 | 0.9 | Focused without being restrictive |
+
+---
+
+## 🧪 Test Queries
+
+| Query | Route | Tool(s) Called |
+|:---|:---:|:---|
+| *"Which products are critically low on stock?"* | INVENTORY | `generate_restock_alert()` |
+| *"What's the gross margin on SC018?"* | PRICING | `get_pricing_analysis()` |
+| *"What are customers saying about SC011?"* | REVIEWS | `get_review_insights()` |
+| *"Show me all Accessories"* | CATALOG | `search_products()` + `get_category_performance()` |
+| *"Hello, what can you do?"* | GENERAL | Direct LLM response |
 
 ---
 
 ## 🔑 Environment Variables
 
-| Variable | Description | Required |
-|:---|:---|:---:|
-| `GROQ_API_KEY` | API key from [Groq Console](https://console.groq.com) | ✅ |
-
-> ⚠️ **Security**: Never commit real API keys. The `.gitignore` is configured to exclude `.env`.
-
----
-
-## 🧪 Example Queries to Try
-
-Test the agent across all 5 intent routes:
-
-| Query | Expected Route | What Happens |
+| Variable | Required | Source |
 |:---|:---:|:---|
-| *"Which products are critically low on stock?"* | `INVENTORY` | Runs `generate_restock_alert()` → urgency-sorted stockout list |
-| *"What's the gross margin on SC018?"* | `PRICING` | Runs `get_pricing_analysis('SC018')` → 63.99% margin, Premium |
-| *"What are customers saying about the Velvet Party Dress?"* | `REVIEWS` | Runs `get_review_insights('SC011')` → LLM sentiment + themes |
-| *"Show me all Accessories"* | `CATALOG` | Runs `search_products()` + `get_category_performance()` |
-| *"Hello, what can you do?"* | `GENERAL` | Direct LLM response about capabilities |
-| *"Which dresses should we restock?"* | `INVENTORY` | Filtered restock alerts for Dresses category |
-| *"What's the best performing category?"* | `CATALOG` | Category metrics comparison |
-| *"Is SC004 priced correctly?"* | `PRICING` | Pricing analysis with margin flag |
-| *"Customer complaints for SC025"* | `REVIEWS` | Review insights showing negative themes |
-| *"Top revenue products in Outerwear?"* | `CATALOG` | Category performance with top 3 by revenue |
+| `GROQ_API_KEY` | ✅ | [console.groq.com](https://console.groq.com) (free) |
 
----
-
-## 🦜 LangChain Integration Details
-
-This project uses **LangChain** as the core LLM orchestration framework:
-
-```python
-# Router uses LangChain's ChatGroq + message types
-from langchain_groq import ChatGroq
-from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
-
-# Intent Classification (temperature=0.1 for deterministic routing)
-llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.1)
-messages = [SystemMessage(content=ROUTER_PROMPT), HumanMessage(content=query)]
-classification = llm.invoke(messages)
-
-# Review Sentiment Analysis (temperature=0.3 for factual analysis)
-llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.3)
-messages = [SystemMessage(content=REVIEW_PROMPT), HumanMessage(content=reviews)]
-insights = llm.invoke(messages)
-
-# Response Generation (temperature=0.5 for natural language)
-llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.5)
-messages = [SystemMessage(...), *history, HumanMessage(content=tool_results)]
-response = llm.invoke(messages)
-```
-
-### LLM Parameter Choices (Commented in Code)
-
-| Parameter | Value | Rationale |
-|:---|:---:|:---|
-| `temperature` (router) | `0.1` | Ensures consistent, deterministic intent classification |
-| `temperature` (reviews) | `0.3` | Factual sentiment analysis with minimal hallucination |
-| `temperature` (response) | `0.5` | Natural, varied conversational output |
-| `max_tokens` (router) | `150` | Classification JSON is compact |
-| `max_tokens` (reviews) | `300` | Structured JSON with themes |
-| `max_tokens` (response) | `800` | Rich, detailed natural language |
-| `top_p` | `0.9–0.95` | Focused output without being overly restrictive |
-| `model` | `llama-3.3-70b-versatile` | Best balance of capability and speed on Groq |
+> ⚠️ Never commit API keys — `.gitignore` excludes `.env`
 
 ---
 
 ## 🛠️ Tech Stack
 
-<div align="center">
-
-| Technology | Purpose | Why This Choice |
-|:---:|:---|:---|
-| 🐍 **Python 3.9+** | Core language | Industry standard for AI/ML |
-| 🦜 **LangChain** | LLM orchestration | `ChatGroq`, `SystemMessage`, `HumanMessage`, `AIMessage` for structured agent design |
-| ⚡ **Groq** | LLM inference | Ultra-fast LPU; free tier; `llama-3.3-70b-versatile` |
-| 🎈 **Streamlit** | Web UI framework | Rapid prototyping with chat interface support |
-| 🐼 **Pandas** | Data processing | Fast CSV operations and aggregation |
-| 🔐 **python-dotenv** | Secret management | Keeps API keys out of source code |
-
-</div>
-
----
-
-## 📊 Dataset Overview
-
-### `retailmind_products.csv` — 30 SKUs
-
-| Column | Type | Description |
-|:---|:---:|:---|
-| `product_id` | String | Unique ID (SC001–SC030) |
-| `product_name` | String | Full product name |
-| `category` | String | Tops / Dresses / Bottoms / Outerwear / Accessories |
-| `price` | Float | Selling price (INR) |
-| `cost` | Float | Cost of goods (INR) |
-| `stock_quantity` | Integer | Current inventory |
-| `avg_daily_sales` | Float | 30-day average daily units sold |
-| `return_rate` | Float | Return percentage (0–1) |
-| `avg_rating` | Float | Customer rating (1.0–5.0) |
-| `review_count` | Integer | Total reviews |
-| `launch_date` | Date | Product launch date |
-| `reorder_level` | Integer | Reorder trigger threshold |
-
-### `retailmind_reviews.csv` — 40 Reviews
-
-| Column | Type | Description |
-|:---|:---:|:---|
-| `review_id` | Integer | Unique review ID |
-| `product_id` | String | Links to products CSV |
-| `reviewer_name` | String | Customer first name |
-| `rating` | Integer | Star rating (1–5) |
-| `review_title` | String | Review headline |
-| `review_text` | String | Full review body |
-| `verified_purchase` | Boolean | Purchase verified |
-| `helpful_votes` | Integer | Helpfulness votes |
-| `review_date` | Date | Review date |
+| Tech | Role |
+|:---:|:---|
+| 🐍 Python | Core language |
+| 🦜 LangChain | LLM orchestration (`ChatGroq`, message types) |
+| ⚡ Groq | Ultra-fast inference (Llama 3.3 70B) |
+| 🎈 Streamlit | Web UI with chat interface |
+| 📊 Plotly | Interactive analytics charts |
+| 🐼 Pandas | Data processing |
+| 🔐 python-dotenv | API key management |
 
 ---
 
 <div align="center">
 
-<!-- Footer Wave -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,50:764ba2,100:f093fb&height=100&section=footer" width="100%"/>
 
-**Built with 💡 precision and ⚡ speed**
-
-*RetailMind Analytics © 2026 — Building AI Agents Mid-Term Examination (Set-B)*
+**Built with 💡 precision and ⚡ speed** · RetailMind Analytics © 2026
 
 </div>
