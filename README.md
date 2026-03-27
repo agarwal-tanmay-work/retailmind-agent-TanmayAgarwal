@@ -157,8 +157,8 @@ flowchart TD
 
 ```bash
 # 1️⃣ Clone
-git clone https://github.com/agarwal-tanmay-work/creditsage-agent-TanmayAgarwal.git
-cd creditsage-agent-TanmayAgarwal
+git clone https://github.com/agarwal-tanmay-work/retailmind-agent-TanmayAgarwal.git
+cd retailmind-agent-TanmayAgarwal
 
 # 2️⃣ Install
 pip install -r requirements.txt

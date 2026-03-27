@@ -226,6 +226,17 @@ st.markdown("""
         color: #E2E8F0 !important;
         border-bottom: 2px solid #58A6FF !important;
     }
+    
+    /* Sticky Catalog Summary Panel as per Requirement #39 */
+    .sticky-summary {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: #0E1117;
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #262730;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -346,6 +357,10 @@ avg_rating = round(summary_df['avg_rating'].mean(), 2)
 total_revenue = round((summary_df['price'] * summary_df['avg_daily_sales']).sum(), 0)
 total_stock = int(summary_df['stock_quantity'].sum())
 
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# CATALOG SUMMARY PANEL — ALWAYS VISIBLE (Requirement #39)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+st.markdown('<div class="sticky-summary">', unsafe_allow_html=True)
 col1, col2, col3, col4, col5 = st.columns(5)
 metrics = [
     (col1, total_skus, "Active SKUs", ""),
@@ -358,8 +373,7 @@ for col, value, label, extra_class in metrics:
     with col:
         cls = f"metric-card {extra_class}" if extra_class else "metric-card"
         st.markdown(f'<div class="{cls}"><h3>{value}</h3><p>{label}</p></div>', unsafe_allow_html=True)
-
-st.markdown('<div class="section-divider"></div>', unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -372,6 +386,15 @@ tab_chat, tab_analytics = st.tabs(["AI Copilot", "Visual Analytics"])
 # TAB 1: CHAT
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 with tab_chat:
+    # Anchor for scrolling
+    st.markdown('<div id="top-anchor"></div>', unsafe_allow_html=True)
+    
+    # Top Query Box
+    if "top_query_key" not in st.session_state:
+        st.session_state.top_query_key = "q_0"
+        
+    top_query = st.text_input("Quick Command Prompt", placeholder="e.g., Which category has the best margins?", key=st.session_state.top_query_key)
+    
     if not st.session_state.briefing_generated:
         with st.status("Initializing intelligence briefing...", expanded=True) as status:
             st.write("Aggregating inventory metrics...")
@@ -409,10 +432,17 @@ with tab_chat:
     user_query = st.chat_input("Enter your query regarding catalog operations, analytics, or sentiment...")
     
     process_query = None
-    if user_query and user_query.strip():
-        process_query = user_query
-    elif "pending_user_query" in st.session_state:
-        process_query = st.session_state.pop("pending_user_query")
+    if top_query and top_query.strip():
+        # Set pending query and change key to clear the input field
+        st.session_state.pending_user_query = top_query
+        st.session_state.top_query_key = f"q_{len(st.session_state.messages) + 1}"
+        st.rerun()
+            
+    if not process_query:
+        if user_query and user_query.strip():
+            process_query = user_query
+        elif "pending_user_query" in st.session_state:
+            process_query = st.session_state.pop("pending_user_query")
 
     if process_query:
         with st.chat_message("user"):
@@ -441,6 +471,20 @@ with tab_chat:
         
         st.session_state.messages.append({"role": "assistant", "content": response})
         st.session_state.memory.add_message("assistant", response)
+        
+        # JS-based auto-scroll to the bottom of the page
+        st.components.v1.html(
+            f"""
+            <script>
+                var main = window.parent.document.querySelector('.main');
+                if (main) {{
+                    main.scrollTo({{ top: main.scrollHeight, behavior: 'smooth' }});
+                }}
+            </script>
+            """,
+            height=0
+        )
+        st.rerun()
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
