@@ -399,57 +399,48 @@ with tab_chat:
             "Worst rated product": "Determine the lowest rated SKU and summarize the principal negative consumer themes.",
             "Full inventory report": "Generate a comprehensive inventory health assessment across the catalog.",
         }
-        user_query = query_map.get(action, action)
-        st.session_state.messages.append({"role": "user", "content": user_query})
-        st.session_state.memory.add_message("user", user_query)
-        
-        try:
-            response = route_query(
-                query=user_query,
-                conversation_history=st.session_state.memory.get_history(),
-                selected_category=selected_category if selected_category != "All Categories" else None
-            )
-        except Exception as e:
-            response = f"System Error: {str(e)}"
-        
-        st.session_state.messages.append({"role": "assistant", "content": response})
-        st.session_state.memory.add_message("assistant", response)
+        st.session_state.pending_user_query = query_map.get(action, action)
         st.rerun()
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-    if user_query := st.chat_input("Enter your query regarding catalog operations, analytics, or sentiment..."):
-        if not user_query.strip():
-            st.toast("Empty query received. Please input parameters.", icon="⚠️")
-        else:
-            with st.chat_message("user"):
-                st.markdown(user_query)
+    user_query = st.chat_input("Enter your query regarding catalog operations, analytics, or sentiment...")
+    
+    process_query = None
+    if user_query and user_query.strip():
+        process_query = user_query
+    elif "pending_user_query" in st.session_state:
+        process_query = st.session_state.pop("pending_user_query")
+
+    if process_query:
+        with st.chat_message("user"):
+            st.markdown(process_query)
+        
+        st.session_state.messages.append({"role": "user", "content": process_query})
+        st.session_state.memory.add_message("user", process_query)
+        
+        with st.chat_message("assistant"):
+            with st.status("Processing via LLM layer...", expanded=False) as status:
+                try:
+                    response = route_query(
+                        query=process_query,
+                        conversation_history=st.session_state.memory.get_history(),
+                        selected_category=selected_category if selected_category != "All Categories" else None
+                    )
+                    status.update(label="Analysis complete", state="complete")
+                except Exception as e:
+                    response = f"System Error executing query: {str(e)}\n\nPlease verify environment configuration or simplify query taxonomy."
+                    status.update(label="Execution Error", state="error")
             
-            st.session_state.messages.append({"role": "user", "content": user_query})
-            st.session_state.memory.add_message("user", user_query)
-            
-            with st.chat_message("assistant"):
-                with st.status("Processing via LLM layer...", expanded=False) as status:
-                    try:
-                        response = route_query(
-                            query=user_query,
-                            conversation_history=st.session_state.memory.get_history(),
-                            selected_category=selected_category if selected_category != "All Categories" else None
-                        )
-                        status.update(label="Analysis complete", state="complete")
-                    except Exception as e:
-                        response = f"System Error executing query: {str(e)}\n\nPlease verify environment configuration or simplify query taxonomy."
-                        status.update(label="Execution Error", state="error")
-                
-                if "System Error" in response:
-                    st.error(response)
-                else:
-                    st.markdown(response)
-            
-            st.session_state.messages.append({"role": "assistant", "content": response})
-            st.session_state.memory.add_message("assistant", response)
+            if "System Error" in response:
+                st.error(response)
+            else:
+                st.markdown(response)
+        
+        st.session_state.messages.append({"role": "assistant", "content": response})
+        st.session_state.memory.add_message("assistant", response)
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
