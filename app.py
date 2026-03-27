@@ -87,7 +87,7 @@ st.markdown("""
     }
     .main-header p { 
         margin: 0.3rem 0 0 0; 
-        color: #94A3B8; 
+        color: #CBD5E1; 
         font-size: 0.9rem; 
         font-weight: 400; 
     }
@@ -95,12 +95,12 @@ st.markdown("""
     .tech-badge {
         display: inline-block;
         background-color: transparent;
-        color: #64748B;
+        color: #94A3B8;
         padding: 0.1rem 0.6rem;
         border-radius: 4px;
         font-size: 0.7rem;
         margin-right: 0.5rem;
-        border: 1px solid #334155;
+        border: 1px solid #475569;
     }
     
     /* Metric Cards */
@@ -122,9 +122,9 @@ st.markdown("""
         color: #E2E8F0;
     }
     .metric-card p { 
-        margin: 0.3rem 0 0 0; 
+        margin: 0.2rem 0 0 0; 
         font-size: 0.7rem; 
-        color: #94A3B8; 
+        color: #CBD5E1; 
         font-weight: 600; 
         text-transform: uppercase; 
         letter-spacing: 0.5px; 
@@ -148,7 +148,7 @@ st.markdown("""
     }
     .sidebar-logo p { 
         font-size: 0.75rem; 
-        color: #8B949E; 
+        color: #CBD5E1; 
         margin: 0.2rem 0 0 0; 
     }
     
@@ -157,7 +157,7 @@ st.markdown("""
         align-items: center; 
         gap: 0.4rem; 
         font-size: 0.75rem; 
-        color: #8B949E;
+        color: #CBD5E1;
         margin-bottom: 1rem;
     }
     .status-dot { 
@@ -210,7 +210,7 @@ st.markdown("""
     .stTabs [data-baseweb="tab"] {
         padding-top: 1rem;
         padding-bottom: 1rem;
-        color: #8B949E;
+        color: #CBD5E1;
         background: transparent;
         border: none !important;
         font-weight: 500;
