@@ -142,7 +142,14 @@ def execute_tools(classification: dict, query: str, selected_category: str = Non
     product_id = classification.get("product_id")
     category = classification.get("category") or selected_category
     search_query = classification.get("search_query") or query
-    threshold = classification.get("threshold_days", 7)
+    threshold = classification.get("threshold_days")
+    if threshold is None:
+        threshold = 7
+    else:
+        try:
+            threshold = int(threshold)
+        except (ValueError, TypeError):
+            threshold = 7
     
     results = {}
     

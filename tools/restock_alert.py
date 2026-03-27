@@ -12,6 +12,13 @@ from data.loader import get_products_df
 
 
 def generate_restock_alert(threshold_days: int = 7) -> list[dict]:
+    # Defensive check for None or non-integer threshold
+    if threshold_days is None:
+        threshold_days = 7
+    try:
+        threshold_days = int(threshold_days)
+    except (ValueError, TypeError):
+        threshold_days = 7
     """
     Generate restock alerts for products at risk of stockout.
     

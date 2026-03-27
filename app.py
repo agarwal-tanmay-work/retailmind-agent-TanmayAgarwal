@@ -334,6 +334,17 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# 🚀 Top Search Concierge (Requirement addition)
+t_col1, t_col2 = st.columns([7, 1])
+with t_col1:
+    q_input = st.text_input("concierge_search", label_visibility="collapsed", placeholder="Search products, check stock, or analyze margins...", key="concierge_input")
+with t_col2:
+    if st.button("Query", use_container_width=True, type="primary", key="concierge_submit"):
+        if q_input:
+            st.session_state.pending_user_query = q_input
+            st.session_state.active_tab = "AI Copilot"
+            st.rerun()
+
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # CATALOG SUMMARY PANEL
@@ -380,6 +391,9 @@ st.markdown('</div>', unsafe_allow_html=True)
 # TABS: Chat | Analytics Dashboard
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 tab_chat, tab_analytics = st.tabs(["AI Copilot", "Visual Analytics"])
+# Note: Basic st.tabs doesn't support easy programmatic switching without 
+# specific session state key handling in some Streamlit versions, 
+# but we will ensure the query displays immediately below this.
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
