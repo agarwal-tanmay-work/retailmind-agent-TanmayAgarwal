@@ -439,11 +439,14 @@ with tab_chat:
                             selected_category=selected_category if selected_category != "All Categories" else None
                         )
                         status.update(label="Analysis complete", state="complete")
-                        st.markdown(response)
                     except Exception as e:
                         response = f"System Error executing query: {str(e)}\n\nPlease verify environment configuration or simplify query taxonomy."
                         status.update(label="Execution Error", state="error")
-                        st.error(response)
+                
+                if "System Error" in response:
+                    st.error(response)
+                else:
+                    st.markdown(response)
             
             st.session_state.messages.append({"role": "assistant", "content": response})
             st.session_state.memory.add_message("assistant", response)
