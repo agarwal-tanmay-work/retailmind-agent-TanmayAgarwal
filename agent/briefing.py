@@ -31,14 +31,14 @@ def generate_daily_briefing() -> str:
     products_df = get_products_df()
     
     briefing_parts = []
-    briefing_parts.append("## 📋 Daily Briefing — StyleCraft Catalog Intelligence\n")
-    briefing_parts.append("*Auto-generated on startup • Powered by RetailMind AI*\n")
+    briefing_parts.append("## Daily Intelligence Briefing — StyleCraft Catalog\n")
+    briefing_parts.append("*Auto-generated on startup • Powered by RetailMind Analytics*\n")
     briefing_parts.append("---\n")
     
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     # SECTION 1: Top 3 Critically Low-Stock Products
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    briefing_parts.append("### 🔴 Critical Inventory Alerts\n")
+    briefing_parts.append("### Critical Inventory Alerts\n")
     
     restock_alerts = generate_restock_alert(threshold_days=14)  # Broader scan
     
@@ -51,20 +51,20 @@ def generate_daily_briefing() -> str:
             briefing_parts.append(
                 f"**{i}. {alert['product_name']}** (`{alert['product_id']}`) — "
                 f"*{alert['category']}*\n"
-                f"   - ⏰ **{days} days** to stockout | "
+                f"   - [Urgent] **{days} days** to stockout | "
                 f"Stock: {alert['stock_quantity']} units | "
                 f"Daily sales: {alert['avg_daily_sales']} units/day\n"
-                f"   - 💰 Revenue at risk: **₹{revenue:,.0f}**\n"
+                f"   - [Risk] Revenue at risk: **₹{revenue:,.0f}**\n"
             )
         
         briefing_parts.append("")
     else:
-        briefing_parts.append("✅ No critical inventory alerts. All products have healthy stock levels.\n")
+        briefing_parts.append("[OK] No critical inventory alerts. All products have healthy stock levels.\n")
     
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     # SECTION 2: Worst-Rated Product
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    briefing_parts.append("### ⭐ Lowest Rated Product Alert\n")
+    briefing_parts.append("### Lowest Rated Product Alert\n")
     
     worst_product = products_df.loc[products_df['avg_rating'].idxmin()]
     worst_id = worst_product['product_id']
@@ -81,17 +81,17 @@ def generate_daily_briefing() -> str:
         negative_themes = []
     
     briefing_parts.append(
-        f"**{worst_name}** (`{worst_id}`) — Rating: **{worst_rating}/5.0** ⭐\n"
-        f"- 📝 {sentiment}\n"
+        f"**{worst_name}** (`{worst_id}`) — Rating: **{worst_rating}/5.0**\n"
+        f"- [Sentiment] {sentiment}\n"
     )
     if negative_themes:
-        briefing_parts.append(f"- 🔍 Key issues: {', '.join(negative_themes)}\n")
+        briefing_parts.append(f"- [Themes] Key issues: {', '.join(negative_themes)}\n")
     briefing_parts.append("")
     
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     # SECTION 3: Pricing Flag (Lowest Margin Product)
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    briefing_parts.append("### 💲 Pricing Flag\n")
+    briefing_parts.append("### Margin/Pricing Flag\n")
     
     # Find product with lowest gross margin
     products_with_margin = products_df.copy()
@@ -108,14 +108,14 @@ def generate_daily_briefing() -> str:
         briefing_parts.append(
             f"**{lowest_margin_product['product_name']}** (`{lowest_margin_product['product_id']}`) — "
             f"*{lowest_margin_product['category']}*\n"
-            f"- 📉 Gross margin: **{lowest_margin_pct}%** (below 25% target)\n"
+            f"- [Flag] Gross margin: **{lowest_margin_pct}%** (below 25% priority target)\n"
             f"- Price: ₹{lowest_margin_product['price']:,.0f} | Cost: ₹{lowest_margin_product['cost']:,.0f}\n"
         )
         if pricing_data.get("suggested_action"):
-            briefing_parts.append(f"- 💡 {pricing_data['suggested_action']}\n")
+            briefing_parts.append(f"- [Action] {pricing_data['suggested_action']}\n")
     else:
         briefing_parts.append(
-            f"✅ All products have margins above 25%. "
+            f"[OK] All products have margins above 25%. "
             f"Lowest: {lowest_margin_product['product_name']} at {lowest_margin_pct}%.\n"
         )
     
