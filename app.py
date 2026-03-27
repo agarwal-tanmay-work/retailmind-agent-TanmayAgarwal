@@ -68,6 +68,15 @@ st.markdown("""
         font-family: 'Inter', sans-serif; 
     }
     
+    /* Bulletproof text visibility for Streamlit markdown elements */
+    div[data-testid="stMarkdownContainer"] p, 
+    div[data-testid="stMarkdownContainer"] li, 
+    div[data-testid="stMarkdownContainer"] h1, 
+    div[data-testid="stMarkdownContainer"] h2, 
+    div[data-testid="stMarkdownContainer"] h3 {
+        color: #E2E8F0 !important;
+    }
+    
     .stApp { 
         background-color: #0E1117;
     }
